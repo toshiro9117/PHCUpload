@@ -4,16 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload to Dropbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        button {
+            background-color: #0070e0;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0059b3;
+        }
+    </style>
 </head>
 <body>
-    <h2>Select Files to Upload to Dropbox</h2>
-    <form action="https://www.dropbox.com/1/oauth2/authorize" method="POST">
-        <input type="hidden" name="response_type" value="code">
-        <input type="hidden" name="client_id" value="YOUR_DROPBOX_APP_CLIENT_ID">
-        <input type="hidden" name="redirect_uri" value="YOUR_REDIRECT_URI">
-        <input type="hidden" name="state" value="csrf">
-        <button type="submit">Choose Files</button>
-    </form>
+    <div class="container">
+        <h2>Select Files to Upload to Dropbox</h2>
+        <form action="https://www.dropbox.com/1/oauth2/authorize" method="POST">
+            <input type="hidden" name="response_type" value="code">
+            <input type="hidden" name="client_id" value="YOUR_DROPBOX_APP_CLIENT_ID">
+            <input type="hidden" name="redirect_uri" value="YOUR_REDIRECT_URI">
+            <input type="hidden" name="state" value="csrf">
+            <button type="submit">Choose Files</button>
+        </form>
+    </div>
 
     <script>
         // Replace YOUR_DROPBOX_APP_CLIENT_ID and YOUR_REDIRECT_URI with your Dropbox app's client ID and redirect URI respectively
