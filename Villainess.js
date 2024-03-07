@@ -14,25 +14,9 @@ function FileUpload() {
       return;
     }
 
-    const formData = new FormData();
-    formData.append('file', selectedFile);
-
-    try {
-      const response = await fetch('<YOUR_UPLOAD_ENDPOINT>', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        setIsFileUploaded(true);
-        alert('File uploaded successfully!');
-      } else {
-        alert('Failed to upload file. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error uploading file:', error);
-      alert('An error occurred while uploading the file.');
-    }
+    // Simulate successful upload
+    setIsFileUploaded(true);
+    alert('File uploaded successfully!');
   };
 
   return (
